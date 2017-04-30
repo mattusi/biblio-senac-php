@@ -16,10 +16,13 @@
  
     		$sqlQuery = $conn->query("SELECT * FROM USERS");
     		$result = $sqlQuery->fetchAll();
-    		echo "Row count: " . $result . ".";
+    		echo "Row count: " . count($result) . ".";
 			}
 		catch(Exception $e){
     		die(var_dump($e));
+			}
+		foreach($results['data'] as $result) {
+    		echo $result['type'], '<br>';
 			}
 		 ?>
 	</body>
