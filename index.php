@@ -16,7 +16,7 @@
  
     		$sqlQuery = $conn->query("SELECT * FROM USERS");
     		$result = $sqlQuery->fetchAll();
-    		echo "Row count: " . count($result) . ".";
+    		echo "Row count: " . $result . ".";
 			}
 		catch(Exception $e){
     		die(var_dump($e));
