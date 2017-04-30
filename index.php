@@ -18,6 +18,19 @@
     		$result = $sqlQuery->fetchAll();
     		//echo "Row count: " . array($result) . ".";
     		echo json_encode($result);
+    		
+    		$resultArray = array();
+			$tempArray = array();
+ 
+			// Loop through each row in the result set
+			while($row = $result->fetch_object())
+			{
+			// Add each row into our results array
+				$tempArray = $row;
+	    		array_push($resultArray, $tempArray);
+			}
+ 		// Finally, encode the array to JSON and output the results
+		echo json_encode($resultArray);
 			}
 		catch(Exception $e){
     		die(var_dump($e));
