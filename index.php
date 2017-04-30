@@ -21,7 +21,7 @@
 		catch(Exception $e){
     		die(var_dump($e));
 			}
-		foreach($results['data'] as $result) {
+		foreach($results['UserPWD'] as $result) {
     		echo $result['type'], '<br>';
 			}
 		 ?>
