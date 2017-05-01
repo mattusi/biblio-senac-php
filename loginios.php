@@ -28,7 +28,7 @@
                 	
                 	if (($email and $pwd) == ($row[UserEmail] and $row[UserPWD])){
                 		echo'OK ' . $row[UserID] . ' ' . $row[UserName] . ' end';
-                		break(2);
+                		
                 	}else {
                 	echo "if not working";
                 	}
