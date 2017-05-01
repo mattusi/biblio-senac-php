@@ -8,7 +8,7 @@
         $nameError = null;
          
         // obtem o campo de entrada Nome e atribuii para variavel
-        $name = ($_POST['nome']);
+        $name = ($_POST['name']);
         $email = ($_POST['email']);
         $pwd = ($_POST['pwd']);
         // Valida a entrada
