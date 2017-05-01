@@ -9,7 +9,8 @@
          
         // obtem o campo de entrada Nome e atribuii para variavel
         $name = $_POST['nome'];
-         
+        $email = $_POST['email']
+        $pwd = $_POST['pwd']
         // Valida a entrada
         $valid = true;
         if (empty($name)) {
@@ -23,9 +24,8 @@
                 $conexao = Conecta::abrir();
             	$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             	$conexao->beginTransaction();
-            	$sql = "INSERT INTO Users (UserName) values (?)";
+            	$sql = "INSERT INTO Users (UserName, UserEmail, UserPWD) values ('$name', '$email', '$pwd');";
             	$query = $conexao->prepare($sql);
-            	$query->execute(array($name));
             	$conexao->commit(); 
             	Conecta::fechar();
             } catch(PDOException $e) {
