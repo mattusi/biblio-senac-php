@@ -16,11 +16,11 @@
         if (empty($name)) {
             echo('Por favor, entre com o Nome');
             $valid = false;
-
+		}
          
         // insert data
         if ($valid) {
-        	echo($name, $email, $pwd);
+        	echo($name);
             try {
                 $conexao = Conecta::abrir();
             	$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
