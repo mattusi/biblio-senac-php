@@ -27,7 +27,7 @@
                 	
                 	if ($useri == $row[UserID]){
                 		echo'Start:' . $row[BookID] . ':' . $row[RentS] . ':' . $row[RentD] . ':end';	
-                	
+                	}
                 }
             } catch(PDOException $e) {
 				// Se ocorrer erro, apresentar e parar a app 
