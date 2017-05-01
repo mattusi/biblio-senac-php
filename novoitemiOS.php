@@ -20,12 +20,13 @@
          
         // insert data
         if ($valid) {
-        	echo($name . $email . $pwd);
+        	
             try {
                 $conexao = Conecta::abrir();
             	$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             	$conexao->beginTransaction();
-            	$sql = "INSERT INTO Users VALUES ('$name', '$email', '$pwd');";
+            	$sql = "INSERT INTO Users VALUES ($name, $email, $pwd);";
+            	echo $sql;
             	$query = $conexao->prepare($sql);
             	$conexao->commit(); 
             	Conecta::fechar();
