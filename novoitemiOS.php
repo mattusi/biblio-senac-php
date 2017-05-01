@@ -1,7 +1,7 @@
 <?php
     // Classe de conexao ao DB
     require 'conecta.php';
- 	echo 'ok';
+ 	
     // Se for um post do formulario vamos tratar 
     if ( !empty($_POST)) {
         // variavel para tratar os erros
