@@ -13,7 +13,7 @@
         // Valida a entrada
         $valid = true;
         if (empty($email)) {
-            echo('Por favor, entre com o email');
+            echo('Por favor, entre com o Nome');
             $valid = false;
 		}
          
@@ -25,12 +25,12 @@
             	$query = $conexao->prepare("SELECT UserID,UserPWD, UserEmail FROM Users ORDER BY UserID");
                 $query->execute();
                 for($i=0; $row = $query->fetch(); $i++){
-                	$tempEmail = $row[UserEmail]
-                	$tempPWD = $row[UserPWD]
+                	$tempEmail = $row[UserEmail];
+                	$tempPWD = $row[UserPWD];
                 	if ($email and $pwd == $tempEmail and $tempPWD){
-                		echo("OK")
+                		echo("OK");
                 	}else {
-                		echo("wrong user or pwd")
+                		echo("wrong email or pwd");
                 	}
                 
                 }
