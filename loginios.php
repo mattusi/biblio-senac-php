@@ -29,8 +29,6 @@
                 	$tempPWD = $row[UserPWD];
                 	if ($email and $pwd == $tempEmail and $tempPWD){
                 		echo("OK");
-                	}else {
-                		echo("wrong email or pwd");
                 	}
                 
                 }
