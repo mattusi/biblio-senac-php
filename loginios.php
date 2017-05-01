@@ -22,14 +22,14 @@
         	
             try {
                	$conexao = Conecta::abrir();
-            	$query = $conexao->prepare("SELECT UserName, UserID,UserPWD, UserEmail FROM Users");
+            	$query = $conexao->prepare("SELECT UserName, UserID,UserPWD, UserEmail FROM Users ORDER BY UserID");
                 $query->execute();
-                for($i=1; $row = $query->fetch(); $i++){
+                for($i=0; $row = $query->fetch(); $i++){
                 	if ($email and $pwd == $row[UserEmail] and $row[UserPWD]){
-                		echo("OK " . $row[UserID] ." ". $row[UserName] . " end");
+                		echo'OK ' . $row[UserID] . ' ' . $row[UserName] . ' end';
                 		
                 	}
-                	echo($i);
+                	
                 }
             } catch(PDOException $e) {
 				// Se ocorrer erro, apresentar e parar a app 
