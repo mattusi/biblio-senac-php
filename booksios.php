@@ -8,7 +8,7 @@
         $nameError = null;
          
         // obtem o campo de entrada Nome e atribuii para variavel
-        $useri = ($_POST['userid']);
+        $useri = ($_POST['user']);
         // Valida a entrada
         $valid = true;
         if (empty($useri)) {
