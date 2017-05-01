@@ -8,13 +8,12 @@
         $nameError = null;
          
         // obtem o campo de entrada Nome e atribuii para variavel
-        $name = ($_POST['name']);
         $email = ($_POST['email']);
         $pwd = ($_POST['pwd']);
         // Valida a entrada
         $valid = true;
-        if (empty($name)) {
-            echo('Por favor, entre com o Nome');
+        if (empty($email)) {
+            echo('Por favor, entre com o email');
             $valid = false;
 		}
          
@@ -22,15 +21,19 @@
         if ($valid) {
         	
             try {
-                $conexao = Conecta::abrir();
-            	$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            	$conexao->beginTransaction();
-            	$sql = "INSERT INTO Users VALUES ('$pwd', '$name', '$email');";
-            	echo $sql;
-            	$query = $conexao->prepare($sql);
-            	$query->execute();
-            	$conexao->commit(); 
-            	Conecta::fechar();
+               	$conexao = Conecta::abrir();
+            	$query = $conexao->prepare("SELECT UserID,UserPWD, UserEmail FROM Users ORDER BY UserID");
+                $query->execute();
+                for($i=0; $row = $query->fetch(); $i++){
+                	$tempEmail = $row[UserEmail]
+                	$tempPWD = $row[UserPWD]
+                	if ($email and $pwd == $tempEmail and $tempPWD){
+                		echo("OK")
+                	}else {
+                		echo("wrong user or pwd")
+                	}
+                
+                }
             } catch(PDOException $e) {
 				// Se ocorrer erro, apresentar e parar a app 
 				die($e->getMessage()); 
