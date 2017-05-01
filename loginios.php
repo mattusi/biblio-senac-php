@@ -19,7 +19,7 @@
          
         // insert data
         if ($valid) {
-        	
+        	echo $pwd;
             try {
                	$conexao = Conecta::abrir();
             	$query = $conexao->prepare("SELECT * FROM Users ORDER BY UserID");
@@ -27,9 +27,9 @@
                 for($i=0; $row = $query->fetch(); $i++){
                 	
                 	if ($email == $row[UserEmail]){
-                		//if ($pwd == $row[UserPWD]){
+                		if ($pwd == $row[UserPWD]){
                 			echo'OK:' . $row[UserID] . ':' . $row[UserName] . ':end';
-                		//}
+                		}
                 	}
                 	
                 }
