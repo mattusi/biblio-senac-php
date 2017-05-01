@@ -1,40 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
 <html>
 	<head>
-		<title>Teste do PHP no Azure</title> 
+		<title>Grid</title> 
 	</head>
-	<body> 
-		<?php echo '<p>Hello World !!</p>';
-		//SQL database information
-		$host = "tcp:bibliodb.database.windows.net,1433";
-		$user = "mattusi@bibliodb.database.windows.net";
-		$pwd = "12345678Casa";
-		$db = "bibliodb";
- 
-		try {
-    		$conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
-    		$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
- 
-    		$sqlQuery = $conn->query("SELECT * FROM USERS");
-    		$result = $sqlQuery->fetchAll();
-    		//echo "Row count: " . array($result) . ".";
-    		
-    		$resultArray = array();
-			$tempArray = array();
- 
-			// Loop through each row in the result set
-			while($row = $result->fetch_object())
-			{
-			// Add each row into our results array
-				$tempArray = $row;
-	    		array_push($resultArray, $tempArray);
-			}
- 		// Finally, encode the array to JSON and output the results
-		echo json_encode($resultArray);
-			}
-		catch(Exception $e){
-    		die(var_dump($e));
-			}
-		
-		 ?>
-	</body>
-</html>
+	<body>	
+	   <div>
+            <div >
+                <h3>Grid dos Usuarios</h3>
+            </div>
+            <div>
+            	<p>
+                    <a href="novoitem.php">Novo Usuario</a>
+                </p>
+            </div> 
+            <div>
+                <table border=1 width="50%">
+                    <tr>
+                      <td>ID</td>
+                      <td>Usuarios</td>
+                      <td colspan=3 align=center>Opções</td>
+                    </tr>
+                  <?php
+                   include 'conecta.php';
+                   $conexao = Conecta::abrir();
+                   $query = $conexao->prepare("SELECT UserID,UserName FROM Users ORDER BY UserName");
+                   $query->execute();
+                   for($i=0; $row = $query->fetch(); $i++){
+                            echo '<tr>';
+                            echo '<td>' . $row[UserID] . '</td>';
+                            echo '<td>' . $row[UserName] . '</td>';
+                            echo '<td><a href="leritem.php?id='.$row[UserID].'">Detalhes</a></td>';
+                            echo '<td><a href="atualizaritem.php?id='.$row[UserID].'">Atualizar</a></td>';
+                            echo '<td><a color=red href="apagaritem.php?id='.$row[UserID].'">Apagar<a></td>';
+                            echo '</tr>';
+                   }
+                   Conecta::fechar();
+                  ?>
+            </table>
+        </div>
+    </body>
+</html> 
+
