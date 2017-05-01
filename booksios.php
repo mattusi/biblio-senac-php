@@ -26,7 +26,7 @@
                 for($i=0; $row = $query->fetch(); $i++){
                 	
                 	if ($useri == $row[UserID]){
-                		echo ':' . $row[BookID] . ':';	
+                		echo ':' . $row[BookID] . ':0';	
                 	}
                 }
             } catch(PDOException $e) {
