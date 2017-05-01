@@ -3,7 +3,7 @@
     require 'conecta.php';
  	
     // Se for um post do formulario vamos tratar 
-    if ( !empty($_POST)) {
+  
         // variavel para tratar os erros
         $nameError = null;
          
@@ -16,7 +16,7 @@
         if (empty($name)) {
             $nameError = 'Por favor, entre com o Nome';
             $valid = false;
-        }
+
          
         // insert data
         if ($valid) {
@@ -32,7 +32,7 @@
 				// Se ocorrer erro, apresentar e parar a app 
 				die($e->getMessage()); 
         	}
-            header("Location: status.php?nome=" . $name . "&stat=N");
+           
         }
     }
 ?>
