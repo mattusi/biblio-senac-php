@@ -21,7 +21,7 @@
         	
             try {
                	$conexao = Conecta::abrir();
-            	$query = $conexao->prepare("SELECT * FROM BRents ORDER BY RentID");
+            	$query = $conexao->prepare("SELECT * FROM BRents");
                 $query->execute();
                 for($i=0; $row = $query->fetch(); $i++){
                 	
