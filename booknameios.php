@@ -12,7 +12,7 @@
         // Valida a entrada
         $valid = true;
         if (empty($useri)) {
-            echo('Erro de comunicaçao do POST');
+            
             $valid = false;
 		}
         
