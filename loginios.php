@@ -28,7 +28,7 @@
                 	$tempEmail = $row[UserEmail];
                 	$tempPWD = $row[UserPWD];
                 	if ($email and $pwd == $tempEmail and $tempPWD){
-                		echo("OK" . $row[UserID + 1] . $row[UserName + 1] . "end");
+                		echo("OK " . $row[UserID] ." ". $row[UserName] . " end");
                 	}
                 
                 }
