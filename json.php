@@ -9,10 +9,10 @@
          $temp = array();
  
     //inserting the team in the temporary array
-   		$temp[$row[UserID]] = $team['UserID'];
-    	$temp[$row[UserName]]=$team['UserName'];
-    	$temp[$row[UserPWD]]=$team['UserPWD'];
- 		$temp[$row[UserEmail]]=$team['UserEmail'];
+   		$temp['$row[UserID]'] = $team['UserID'];
+    	$temp['$row[UserName]']=$team['UserName'];
+    	$temp['$row[UserPWD]']=$team['UserPWD'];
+ 		$temp['$row[UserEmail]']=$team['UserEmail'];
     //inserting the temporary array inside response
     array_push($response['user'],$temp);
                            
