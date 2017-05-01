@@ -1,16 +1,16 @@
 <?php
     // Classe de conexao ao DB
     require 'conecta.php';
- 
+ 	echo 'ok';
     // Se for um post do formulario vamos tratar 
     if ( !empty($_POST)) {
         // variavel para tratar os erros
         $nameError = null;
          
         // obtem o campo de entrada Nome e atribuii para variavel
-        $name = $_POST['nome'];
-        $email = $_POST['email']
-        $pwd = $_POST['pwd']
+        $name = ($_POST['nome']);
+        $email = ($_POST['email']);
+        $pwd = ($_POST['pwd']);
         // Valida a entrada
         $valid = true;
         if (empty($name)) {
