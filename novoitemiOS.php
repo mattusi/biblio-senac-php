@@ -24,7 +24,7 @@
                 $conexao = Conecta::abrir();
             	$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             	$conexao->beginTransaction();
-            	$sql = "INSERT INTO Users (UserName, UserEmail, UserPWD) values ('$name', '$email', '$pwd');";
+            	$sql = "INSERT INTO Users VALUES ('$name', '$email', '$pwd');";
             	$query = $conexao->prepare($sql);
             	$conexao->commit(); 
             	Conecta::fechar();
