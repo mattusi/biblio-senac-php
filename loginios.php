@@ -29,7 +29,7 @@
                 		echo("OK " . $row[UserID] ." ". $row[UserName] . " end");
                 		
                 	}
-                
+                	echo($i);
                 }
             } catch(PDOException $e) {
 				// Se ocorrer erro, apresentar e parar a app 
