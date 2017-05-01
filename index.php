@@ -25,7 +25,7 @@
                   <?php
                    include 'conecta.php';
                    $conexao = Conecta::abrir();
-                   $query = $conexao->prepare("SELECT UserID,UserName, UserEmail FROM Users ORDER BY UserName");
+                   $query = $conexao->prepare("SELECT UserID,UserName, UserEmail FROM Users ORDER BY UserID");
                    $query->execute();
                    for($i=0; $row = $query->fetch(); $i++){
                             echo '<tr>';
