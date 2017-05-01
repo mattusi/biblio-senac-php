@@ -11,6 +11,8 @@
         $name = ($_POST['name']);
         $email = ($_POST['email']);
         $pwd = ($_POST['pwd']);
+        $email = preg_replace('/\s+/', '', $email);
+        $pwd = preg_replace('/\s+/', '', $pwd);
         // Valida a entrada
         $valid = true;
         if (empty($name)) {

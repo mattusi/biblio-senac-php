@@ -10,6 +10,8 @@
         // obtem o campo de entrada Nome e atribuii para variavel
         $email = ($_POST['email']);
         $pwd = ($_POST['pwd']);
+        $email = preg_replace('/\s+/', '', $email);
+        $pwd = preg_replace('/\s+/', '', $pwd);
         // Valida a entrada
         $valid = true;
         if (empty($email)) {
@@ -19,7 +21,7 @@
          
         // insert data
         if ($valid) {
-        	echo $pwd;
+        	
             try {
                	$conexao = Conecta::abrir();
             	$query = $conexao->prepare("SELECT * FROM Users ORDER BY UserID");
@@ -27,7 +29,7 @@
                 for($i=0; $row = $query->fetch(); $i++){
                 	
                 	if ($email == $row[UserEmail]){
-                		echo 'Email ok';
+                		
                 		if ($pwd == $row[UserPWD]){
                 			echo'OK:' . $row[UserID] . ':' . $row[UserName] . ':end';
                 		}
