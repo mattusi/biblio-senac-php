@@ -20,6 +20,7 @@
          
         // insert data
         if ($valid) {
+        	echo($name, $email, $pwd);
             try {
                 $conexao = Conecta::abrir();
             	$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
