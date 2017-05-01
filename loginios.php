@@ -24,7 +24,7 @@
                	$conexao = Conecta::abrir();
             	$query = $conexao->prepare("SELECT UserName, UserID,UserPWD, UserEmail FROM Users ORDER BY UserID");
                 $query->execute();
-                for($i=0; $row = $query->fetch(); $i++){
+                for($i=1; $row = $query->fetch(); $i++){
                 	$tempEmail = $row[UserEmail];
                 	$tempPWD = $row[UserPWD];
                 	if ($email and $pwd == $tempEmail and $tempPWD){
