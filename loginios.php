@@ -27,8 +27,8 @@
                 for($i=0; $row = $query->fetch(); $i++){
                 	$tempEmail = $row[UserEmail];
                 	$tempPWD = $row[UserPWD];
-                	$tempID = $row[UserID]
-                	$tempName = $row[UserName]
+                	$tempID = $row[UserID];
+                	$tempName = $row[UserName];
                 	if ($email and $pwd == $tempEmail and $tempPWD){
                 		echo("OK " . $tempID ." ". $tempName . " end");
                 	}
