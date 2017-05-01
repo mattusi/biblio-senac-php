@@ -14,7 +14,7 @@
         // Valida a entrada
         $valid = true;
         if (empty($name)) {
-            $nameError = 'Por favor, entre com o Nome';
+            echo('Por favor, entre com o Nome');
             $valid = false;
 
          
