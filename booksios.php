@@ -8,10 +8,10 @@
         $nameError = null;
          
         // obtem o campo de entrada Nome e atribuii para variavel
-        $userid = ($_POST['userid']);
+        $useri = ($_POST['userid']);
         // Valida a entrada
         $valid = true;
-        if (empty($userid)) {
+        if (empty($useri)) {
             echo('Erro de comunicaçao do POST');
             $valid = false;
 		}
@@ -25,8 +25,8 @@
                 $query->execute();
                 for($i=0; $row = $query->fetch(); $i++){
                 	
-                	if ($userid == $row[UserID]){
-                		echo'Start:' . $row[BookID] . ':' . $row[RentS] . ':' . $row[RentD];	
+                	if ($useri == $row[UserID]){
+                		echo'Start:' . $row[BookID] . ':' . $row[RentS] . ':' . $row[RentD] . ':end';	
                 	
                 }
             } catch(PDOException $e) {
