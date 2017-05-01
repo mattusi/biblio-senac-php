@@ -28,6 +28,7 @@
             	$sql = "INSERT INTO Users VALUES ($name, $email, $pwd);";
             	echo $sql;
             	$query = $conexao->prepare($sql);
+            	$query->execute();
             	$conexao->commit(); 
             	Conecta::fechar();
             } catch(PDOException $e) {
