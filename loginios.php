@@ -27,10 +27,9 @@
                 for($i=0; $row = $query->fetch(); $i++){
                 	
                 	if ($email == $row[UserEmail]){
-                		echo'OK ' . $row[UserID] . ' ' . $row[UserName] . ' end';
-                		
-                	}else {
-                	echo "if not working";
+                		if ($pwd == $row[UserPWD]){
+                			echo'OK:' . $row[UserID] . ':' . $row[UserName] . ':end';
+                		}
                 	}
                 	
                 }
