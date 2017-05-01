@@ -25,10 +25,10 @@
             	$query = $conexao->prepare("SELECT * FROM Users ORDER BY UserID");
                 $query->execute();
                 for($i=0; $row = $query->fetch(); $i++){
-                	echo $row[UserName]; 
+                	
                 	if (($email and $pwd) == ($row[UserEmail] and $row[UserPWD])){
                 		echo'OK ' . $row[UserID] . ' ' . $row[UserName] . ' end';
-                		
+                		break(2);
                 	}else {
                 	echo "if not working";
                 	}
