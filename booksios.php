@@ -15,10 +15,10 @@
             echo('Erro de comunicaçao do POST');
             $valid = false;
 		}
-         
+        echo 'item 1';
         // insert data
         if ($valid) {
-        	
+        echo 'item2';	
             try {
                	$conexao = Conecta::abrir();
             	$query = $conexao->prepare("SELECT * FROM BRents");
