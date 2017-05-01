@@ -19,6 +19,7 @@
                     <tr>
                       <td>ID</td>
                       <td>Usuarios</td>
+                      <td>Email</td>
                       <td colspan=3 align=center>Opções</td>
                     </tr>
                   <?php
