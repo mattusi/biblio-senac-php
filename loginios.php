@@ -26,7 +26,7 @@
                 $query->execute();
                 for($i=0; $row = $query->fetch(); $i++){
                 	
-                	if (($email and $pwd) == ($row[UserEmail] and $row[UserPWD])){
+                	if ($email == $row[UserEmail]){
                 		echo'OK ' . $row[UserID] . ' ' . $row[UserName] . ' end';
                 		
                 	}else {
