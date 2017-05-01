@@ -21,12 +21,12 @@
         	
             try {
                	$conexao = Conecta::abrir();
-            	$query = $conexao->prepare("SELECT UserID, BookID, RentS, RentD FROM BRents");
+            	$query = $conexao->prepare("SELECT UserID, BookID FROM BRents");
                 $query->execute();
                 for($i=0; $row = $query->fetch(); $i++){
                 	
                 	if ($useri == $row[UserID]){
-                		echo ':' . $row[BookID] . ':' . $row[RentS] . ':' . $row[RentD] . ':';	
+                		echo ':' . $row[BookID];	
                 	}
                 }
             } catch(PDOException $e) {
