@@ -12,7 +12,7 @@
         $userid = ($_POST['userid']);
         // Valida a entrada
         $valid = true;
-        if (empty($name)) {
+        if (empty($userid)) {
             echo('Por favor, entre com o Nome');
             $valid = false;
 		}
