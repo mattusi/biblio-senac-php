@@ -8,11 +8,8 @@
         $nameError = null;
          
         // obtem o campo de entrada Nome e atribuii para variavel
-        $name = ($_POST['name']);
-        $email = ($_POST['email']);
-        $pwd = ($_POST['pwd']);
-        $email = preg_replace('/\s+/', '', $email);
-        $pwd = preg_replace('/\s+/', '', $pwd);
+        $bookbarcode = ($_POST['name']);
+        $userid = ($_POST['userid']);
         // Valida a entrada
         $valid = true;
         if (empty($name)) {
@@ -27,7 +24,7 @@
                 $conexao = Conecta::abrir();
             	$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             	$conexao->beginTransaction();
-            	$sql = "INSERT INTO Users VALUES ('$pwd', '$name', '$email');";
+            	$sql = "INSERT INTO BRents VALUES ('$userid', '$bookbarcode');";
             	echo $sql;
             	$query = $conexao->prepare($sql);
             	$query->execute();
